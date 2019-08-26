@@ -7,6 +7,17 @@ class UserInformation:
     password = "tempPass"
     course = "Introduction to Python"
 
+    # We can also override how our class initializes by defining __init__
+    def __init__(self, name, username, password, **kwargs):
+        self.name = name
+        self.username = username
+        self.password = password
+
+        # To set attributes using kwargs, we need to iterate over the packed kwargs and split them into key value pairs
+        for key, value in kwargs.items():
+            # Then we use setattr to assign them to an attribute
+            setattr(self, key, value)  # setattr( the object you want to set on, key, value)
+
     def praise(self):
         return "You're doing a great job, {}! Keep it up!".format(self.name)
 
