@@ -32,3 +32,30 @@ class UserInformation:
 
 
 print(UserInformation.name)
+
+# =========================================
+# INHERITANCE
+# =========================================
+
+
+# You can inherit class attributes and methods from a parent class by specifing it in the class argument
+class Parent:
+
+    def __init__(self, name, **kwargs):
+        self.name = name
+
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def say_hello(self):
+        print("Hello, world! This is a method inheritted from the parent class!")
+
+
+class Child(Parent):  # By specifying Parent as an argument for Child, Child inherits all of parents info
+    inheritance = True
+
+
+# When create an instance of child, we have to specifiy a name, even though child doesnt require one on its own
+# This is because it inherits the __init__ function from Parent, which requires this parameter
+child_instance = Child("Child")
+child_instance.say_hello()  # This instance of child also inherits all of the methods found in parent
