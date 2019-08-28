@@ -6,11 +6,22 @@
 
 
 def combiner(*args):
-    # TODO: Determine the datatype of an argument. Split into str and num
-    # Use isinstance() to determine datatype
-    print(args)
-    # TODO: Create a sum of all of the numbers
+    strings = []
+    nums = []
 
-    # TODO: Concatnate all the strings
+    for item in args:
+        # TODO: Find a way to handle intake of arrays
+        if isinstance(item, str):
+            strings.append(item)
+        elif isinstance(item, (int, float)):
+            nums.append(item)
+        else:
+            print("The value was not added")
+    combined_string = "".join(strings)
+    sum_of_nums = sum(nums)
+    all_combined = "{}{}".format(combined_string, sum_of_nums)
+    print(all_combined)
 
-    # TODO: Concatnate strings with sum
+
+list = ["apple", 5.2, "dog", 8]
+combiner(list)
