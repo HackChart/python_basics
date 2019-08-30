@@ -6,10 +6,16 @@ import random
 
 
 class Liar(list):
-    # TODO: Find out why we override len since it isnt a method
     def __len__(self):
-        return len(self)
+        wrong_number = random.randint(0, 10)
+        while True:
+            if super(Liar, self).__len__() == wrong_number:
+                continue
+            else:
+                return wrong_number
 
 
-x = Liar([1, 2, 3, 4])
+x = Liar([1, 2, 3])
 print(len(x))
+
+
