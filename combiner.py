@@ -9,19 +9,28 @@ def combiner(*args):
     strings = []
     nums = []
 
-    for item in args:
-        # TODO: Find a way to handle intake of arrays
-        if isinstance(item, str):
-            strings.append(item)
-        elif isinstance(item, (int, float)):
-            nums.append(item)
+    for arg in args:
+        # TODO: Refactor elif statements
+        if isinstance(arg, list):
+            for item in arg:
+                if isinstance(item, str):
+                    strings.append(item)
+                elif isinstance(item, (int, float)):
+                    nums.append(item)
+                else:
+                    print("The value was not added")
+        elif isinstance(arg, str):
+            strings.append(arg)
+        elif isinstance(arg, (int, float)):
+            nums.append(arg)
         else:
             print("The value was not added")
+
     combined_string = "".join(strings)
     sum_of_nums = sum(nums)
     all_combined = "{}{}".format(combined_string, sum_of_nums)
     print(all_combined)
 
 
-list = ["apple", 5.2, "dog", 8]
-combiner(list)
+test_list = ["apple", 5.2, "dog", 8]
+combiner(test_list, "Harley", "Nala", "Boo", 3)

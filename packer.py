@@ -3,4 +3,4 @@ def packer(*args):
         print(val)
 
 
-packer()
+packer(1, 2, 3, 4)
