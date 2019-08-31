@@ -19,16 +19,19 @@ class Letter:
         return '-'.join(output)
 
 # TODO: Find a way to iterate through a single string that seperates values
-    # TODO: Look into unjoining a string
     @classmethod
     def from_string(cls, user_string):
         morse_list = []
-        if "dash" in user_string:
-            morse_list.append('_')
+        user_string = user_string.split('-')
+        for item in user_string:
+            if item == "dash":
+                morse_list.append(item)
+            elif item == "dot":
+                morse_list.append(item)
+            else:
+                continue
+        return cls(pattern=morse_list)
         # TODO: Return value to pattern (create an instance of Letter)
-
-
-
 
 
 class S(Letter):
