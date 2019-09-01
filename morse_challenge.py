@@ -25,9 +25,9 @@ class Letter:
         user_string = user_string.split('-')
         for item in user_string:
             if item == "dash":
-                morse_list.append(item)
+                morse_list.append("_")
             elif item == "dot":
-                morse_list.append(item)
+                morse_list.append(".")
             else:
                 continue
         return cls(pattern=morse_list)
