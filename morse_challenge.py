@@ -18,7 +18,6 @@ class Letter:
                 output.append('dash')
         return '-'.join(output)
 
-# TODO: Find a way to iterate through a single string that seperates values
     @classmethod
     def from_string(cls, user_string):
         morse_list = []
@@ -31,7 +30,6 @@ class Letter:
             else:
                 continue
         return cls(pattern=morse_list)
-        # TODO: Return value to pattern (create an instance of Letter)
 
 
 class S(Letter):
