@@ -1,7 +1,7 @@
 import math
 
 
-# TODO: Define a class apple with four instance variables
+# Define a class apple with four instance variables
 class Apple:
     def __init__(self, color, weight, height, diameter):
         self.color = color
@@ -10,7 +10,7 @@ class Apple:
         self.diameter = diameter
 
 
-# TODO: Create a circle class that has a method that returns area (use math module for pi)
+# Create a circle class that has a method that returns area (use math module for pi)
 class Circle:
     def __init__(self, radius):
         self.radius = radius
@@ -24,9 +24,23 @@ class Circle:
         print("The radius has been changed.")
 
 
-# TODO: Create a triangle class that has a method that returns area
+# Create a triangle class that has a method that returns area
+class Triangle:
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
 
-# TODO: Create a hexagon class that has a method that returns perimeter
+    def calculate_area(self):
+        return (self.base * self.height) / 2
+
+
+# Create a hexagon class that has a method that returns perimeter
+class Hexagon:
+    def __init__(self, side_length):
+        self.side_length = side_length
+
+    def calculate_perimeter(self):
+        return self.side_length * 6
 
 
 if __name__ == "__main__":
@@ -40,3 +54,9 @@ if __name__ == "__main__":
     print(circle1.radius)
     circle1.change_radius()
     print(circle1.radius)
+    triangle = Triangle(3, 6)
+    print("The base of the triangle is {}".format(triangle.base))
+    print("The height of the triange is {}".format(triangle.height))
+    print("The area of the triangle is {}".format(triangle.calculate_area()))
+    hexagon = Hexagon(3)
+    print("The perimeter of the hexagon is {}".format(hexagon.calculate_perimeter()))
