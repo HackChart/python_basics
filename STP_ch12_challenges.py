@@ -15,8 +15,13 @@ class Circle:
     def __init__(self, radius):
         self.radius = radius
 
-    def calculate_area(self):
+    @property
+    def area(self):
         return math.pi * math.pow(self.radius, 2)
+
+    @property
+    def diameter(self):
+        return self.radius * 2
 
     def change_radius(self):
         new_radius = input("Please enter the new radius:    ")
@@ -30,7 +35,8 @@ class Triangle:
         self.base = base
         self.height = height
 
-    def calculate_area(self):
+    @property
+    def area(self):
         return (self.base * self.height) / 2
 
 
@@ -39,7 +45,8 @@ class Hexagon:
     def __init__(self, side_length):
         self.side_length = side_length
 
-    def calculate_perimeter(self):
+    @property
+    def perimeter(self):
         return self.side_length * 6
 
 
@@ -50,13 +57,13 @@ if __name__ == "__main__":
     print(apple1.height)
     print(apple1.diameter)
     circle1 = Circle(3)
-    print(circle1.calculate_area())
+    print(circle1.area)
     print(circle1.radius)
     circle1.change_radius()
     print(circle1.radius)
     triangle = Triangle(3, 6)
     print("The base of the triangle is {}".format(triangle.base))
     print("The height of the triange is {}".format(triangle.height))
-    print("The area of the triangle is {}".format(triangle.calculate_area()))
+    print("The area of the triangle is {}".format(triangle.area))
     hexagon = Hexagon(3)
-    print("The perimeter of the hexagon is {}".format(hexagon.calculate_perimeter()))
+    print("The perimeter of the hexagon is {}".format(hexagon.perimeter))
