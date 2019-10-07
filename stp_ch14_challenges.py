@@ -1,3 +1,4 @@
+
 class Square:
     square_list = []
 
