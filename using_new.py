@@ -7,5 +7,3 @@ class Double(int):
 
 
 print(Double(5))
-
-
